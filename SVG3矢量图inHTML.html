@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SVG的嵌入方式</title>
+	</head>
+	<body>
+		<p>SVG 文件可通过以下标签嵌入 HTML 文档：embed、object 或者 iframe</p>
+		<br /><b>使用 embed标签:</b>
+		<br />embed标签被所有主流的浏览器支持，并允许使用脚本。
+		<embed src="SVG矢量图文件2.svg" width="300" height="100" type="image/svg+xml"
+		pluginspage="http://www.adobe.com/svg/viewer/install/" />
+		<br />当在 HTML 页面中嵌入 SVG 时使用 embed标签是 Adobe SVG Viewer 推荐的方法！
+		<br />然而，如果需要创建合法的 XHTML，就不能使用 embed。任何 HTML规范中都没有 embed标签。
+		<br />pluginspage 属性指向下载插件的 URL。
+		<br /><b>使用 object标签:</b>
+		<br />object 标签是 HTML4 的标准标签，被所有较新的浏览器支持。它的缺点是不允许使用脚本。
+		<br />codebase 属性指向下载插件的 URL。
+		<br />注释：假如您安装了最新版本的 Adobe SVG Viewer，那么当使用 <object> 标签时 SVG 文件无法工作（至少不能在 IE 中工作）！
+		<br />
+		<object data="SVG矢量图文件2.svg" width="300" height="100" type="image/svg+xml"
+		codebase="http://www.adobe.com/svg/viewer/install/" />
+		<br /><b>使用 iframe标签:</b>
+		<iframe src="SVG矢量图文件2.svg" width="300" height="100"></iframe>
+		
+		
+	</body>
+</html>

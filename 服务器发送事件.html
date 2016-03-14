@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--学习网址-->
+		<!--http://www.w3school.com.cn/html5/html_5_serversentevents.asp-->
+		HTML5 服务器发送事件（server-sent event）允许网页获得来自服务器的更新。<br />
+		<br />Server-Sent 事件 - 单向消息传递
+		<br />Server-Sent 事件指的是网页自动获取来自服务器的更新。
+		<br />以前也可能做到这一点，前提是网页不得不询问是否有可用的更新。通过服务器发送事件，更新能够自动到达。
+		<br /><b>接收 Server-Sent 事件通知:</b>EventSource 对象用于接收服务器发送事件通知
+		<br />
+		
+		 <br/>创建一个新的 EventSource 对象，然后规定发送更新的页面的 URL（本例中是 "demo_sse.php"）
+    	<br/>每接收到一次更新，就会发生 onmessage 事件
+    	<br/>当 onmessage 事件发生时，把已接收的数据推入 id 为 "result" 的元素中
+    	<div id="result"></div>
+
+		<script>
+		//判断浏览器是否支持服务器发送时间
+		if(typeof(EventSource)!=="undefined")
+		  {
+//		  	需要能够发送数据更新的服务器（比如 PHP 和 ASP）
+		  var source=new EventSource("js/demo_sse.php");
+		  source.onmessage=function(event)
+		    {
+		    document.getElementById("result").innerHTML=event.data + "运行不成功++++++http://www.w3school.com.cn/html5/html_5_serversentevents.asp<br />";
+		    };
+		  }
+		else
+		  {
+		  document.getElementById("result").innerHTML="Sorry, your browser does not support server-sent events...";
+		  }
+		</script>	
+		
+   <!--
+   	作者：1033695620@qq.com
+   	时间：2016-02-28
+   	描述：   	
+	    把报头 "Content-Type" 设置为 "text/event-stream"
+	    规定不对页面进行缓存
+	    输出发送日期（始终以 "data: " 开头）
+	    向网页刷新输出数据
+
+   -->
+	</body>
+</html>

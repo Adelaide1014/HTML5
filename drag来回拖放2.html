@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>在两个 div元素之间拖放图像</title>
+		<style type="text/css">
+		#div1, #div2
+		{ float:left;width:100px; height:35px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+		</style>
+		<script type="text/javascript">
+			
+			function allowDrop(ev){
+				//默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式。
+				ev.preventDefault();				
+			}
+			function drag(ev){
+				//dataTransfer.setData() 方法设置被拖数据的数据类型和值
+				//数据类型是 "Text"，值是可拖动元素的 id ("drag1")
+				ev.dataTransfer.setData("Text",ev.target.id);
+			}
+			function drop(ev){
+				//调用 preventDefault() 来避免浏览器对数据的默认处理（drop 事件的默认行为是以链接形式打开）
+				ev.preventDefault();
+				//通过 dataTransfer.getData("Text") 方法获得被拖的数据。该方法将返回在 setData() 方法中设置为相同类型的任何数据。
+				//被拖数据是被拖元素的 id ("drag1")
+				var data=ev.dataTransfer.getData("Text");
+				//把被拖元素追加到放置元素（目标元素）中
+				ev.target.appendChild(document.getElementById(data));
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)">
+		<img id="drag1" src="img/w3school_logo_black.gif" draggable="true" ondragstart="drag(event)"/>
+		</div>
+		<div id="div2"  ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
+	</body>
+</html>

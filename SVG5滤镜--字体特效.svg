@@ -1,0 +1,122 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+<filter id="MyFilter1" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="120">
+	<feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+</filter>
+</defs>
+
+<rect x="1" y="1" width="198" height="118" fill="#cccccc" />
+
+<g filter="url(#MyFilter1)">
+<path fill="none" stroke="#D90000" stroke-width="10" d="M50,90 C0,90 0,30 50,30 L150,30 C200,30 200,90 150,90 z" />
+<text fill="#FFFFFF" stroke="black" font-size="45" font-family="Verdana" x="52" y="76">SVG</text>
+</g>
+
+
+<defs>
+<filter id="MyFilter2" filterUnits="userSpaceOnUse" x="200" y="0" width="200" height="120">
+	<feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>	
+	<feOffset in="blur" dx="4" dy="4" result="offsetBlur"/><!--dx是指的相对位置-->
+</filter>
+</defs>
+
+<rect x="201" y="1" width="198" height="118" fill="#cccccc" />
+
+<g filter="url(#MyFilter2)">
+<path fill="none" stroke="#ff0000" stroke-width="10" d="M250,90 C200,90 200,30 250,30 L350,30 C400,30 400,90 350,90 z" />
+<text fill="#FFFFFF" stroke="black" font-size="45" font-family="Verdana" x="252" y="76">SVG</text>
+</g>
+
+<defs>
+<filter id="MyFilter3" filterUnits="userSpaceOnUse" x="400" y="0" width="200" height="120">
+	<feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>	
+	<feOffset in="blur" dx="4" dy="4" result="offsetBlur"/><!--dx是指的相对位置-->
+	<feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" specularExponent="20"
+	lighting-color="#bbbbbb" result="specOut">
+		<fePointLight x="-5000" y="-10000" z="20000"/>
+	</feSpecularLighting>
+</filter>
+</defs>
+<rect x="401" y="1" width="198" height="118" fill="#cccccc" />
+
+<g filter="url(#MyFilter3)">
+<path fill="none" stroke="#D90000" stroke-width="10" d="M450,90 C400,90 400,30 450,30 L550,30 C600,30 600,90 550,90 z" />
+<text fill="#FFFFFF" stroke="black" font-size="45" font-family="Verdana" x="452" y="76">SVG</text>
+</g>
+
+
+
+<defs>
+<filter id="MyFilter4" filterUnits="userSpaceOnUse" x="600" y="0" width="200" height="120">
+	<feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>	
+	<feOffset in="blur" dx="4" dy="4" result="offsetBlur"/><!--dx是指的相对位置-->
+	<feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" specularExponent="20"
+	lighting-color="#bbbbbb" result="specOut">
+		<fePointLight x="-5000" y="-10000" z="20000"/>
+	</feSpecularLighting>
+	<feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+</filter>
+</defs>
+
+<rect x="601" y="1" width="198" height="118" fill="#cccccc" />
+
+<g filter="url(#MyFilter4)">
+<path fill="none" stroke="#D90000" stroke-width="10" d="M650,90 C600,90 600,30 650,30 L750,30 C800,30 800,90 750,90 z" />
+<text fill="#FFFFFF" stroke="black" font-size="45" font-family="Verdana" x="652" y="76">SVG</text>
+</g>
+
+<defs>
+<filter id="MyFilter5" filterUnits="userSpaceOnUse" x="800" y="0" width="200" height="120">
+	<feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>	
+	<feOffset in="blur" dx="4" dy="4" result="offsetBlur"/><!--dx是指的相对位置-->
+	<feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" specularExponent="20"
+	lighting-color="#bbbbbb" result="specOut">
+		<fePointLight x="-5000" y="-10000" z="20000"/>
+	</feSpecularLighting>
+	<feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+	<feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+</filter>
+</defs>
+
+<rect x="801" y="1" width="198" height="118" fill="#cccccc" />
+
+<g filter="url(#MyFilter5)">
+<path fill="none" stroke="#D90000" stroke-width="10" d="M850,90 C800,90 800,30 850,30 L950,30 C1000,30 1000,90 950,90 z" />
+<text fill="#FFFFFF" stroke="black" font-size="45" font-family="Verdana" x="852" y="76">SVG</text>
+</g>
+
+
+<defs>
+<filter id="MyFilter6" filterUnits="userSpaceOnUse" x="1000" y="0" width="200" height="120">
+	<feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>	
+	<feOffset in="blur" dx="4" dy="4" result="offsetBlur"/><!--dx是指的相对位置-->
+	<feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" specularExponent="20"
+	lighting-color="#bbbbbb" result="specOut">
+		<fePointLight x="-5000" y="-10000" z="20000"/>
+	</feSpecularLighting>
+	<feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+	<feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+	<feMerge>
+        	<feMergeNode in="offsetBlur"/>
+	        <feMergeNode in="litPaint"/>
+	</feMerge>
+</filter>
+</defs>
+
+<rect x="1001" y="1" width="198" height="118" fill="#cccccc" />
+
+<g filter="url(#MyFilter6)">
+<path fill="none" stroke="#D90000" stroke-width="10" d="M1050,90 C1000,90 1000,30 1050,30 L1150,30 C1200,30 1200,90 1150,90 z" />
+<text fill="#FFFFFF" stroke="black" font-size="45" font-family="Verdana" x="1052" y="76">SVG</text>
+</g>
+
+
+
+</svg>
+
